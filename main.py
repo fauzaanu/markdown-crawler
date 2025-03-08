@@ -130,8 +130,8 @@ if __name__ == '__main__':
         FOLDER = os.path.join("crawls", USER_FOLDER)
 
         # Collect glob includes and excludes using the helper function
-        GLOB_INCLUDES = [f"{URL}/**"] if not USER_DEFINED_GLOB_INCLUDES else []
-        GLOB_EXCLUDES = [] if not USER_DEFINED_GLOB_EXCLUDES else []
+        GLOB_INCLUDES = [f"{URL}/**"] if not USER_DEFINED_GLOB_INCLUDES else USER_DEFINED_GLOB_INCLUDES
+        GLOB_EXCLUDES = [] if not USER_DEFINED_GLOB_EXCLUDES else USER_DEFINED_GLOB_EXCLUDES
 
         # Run the crawler and merge markdown files
         asyncio.run(main())
